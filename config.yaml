@@ -3,4 +3,4 @@ auth:
     username: QUAY_USERNAME
     password: QUAY_PASSOWRD
 images:
-  k8s.gcr.io/addon-resizer: quay.io/QUARY_NAMESPACE/addon-resizer
+  k8s.gcr.io/addon-resizer: quay.io/QUAY_NAMESPACE/addon-resizer
