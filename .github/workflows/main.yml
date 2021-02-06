@@ -2,6 +2,9 @@ name: Image Sync
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - "main"
   schedule:
   # 定时任务，在每天的0点
     - cron: '0 16 * * *'
