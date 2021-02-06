@@ -4,3 +4,5 @@ auth:
     password: QUAY_PASSWORD
 images:
   k8s.gcr.io/addon-resizer: quay.io/QUAY_NAMESPACE/addon-resizer
+  k8s.gcr.io/metrics-server/metrics-server: quay.io/QUAY_NAMESPACE/metrics-server
+  k8s.gcr.io/dns/k8s-dns-node-cache: quay.io/QUAY_NAMESPACE/k8s-dns-node-cache
