@@ -1,0 +1,33 @@
+name: Image Sync
+
+on:
+  workflow_dispatch:
+  schedule:
+  # 定时任务，在每天的0点
+    - cron: '0 16 * * *'
+
+jobs:
+
+  image-sync:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Prepare
+      env:
+        QUAY_USERNAME: ${{ secrets.QUAY_USERNAME }}
+        QUAY_PASSWORD: ${{ secrets.QUAY_PASSWORD }}
+        QUAY_NAMESPACE: ${{ secrets.QUAY_NAMESPACE }}
+        IMAGE_SYNCER_VERSION: v1.3.0
+      run: |
+        sed -i \
+            -e s#QUAY_USERNAME#${QUAY_USERNAME}#g \
+            -e s#QUAY_PASSWORD#${QUAY_PASSWORD}#g \
+            -e s#QUAY_NAMESPACE#${QUAY_NAMESPACE}#g \
+            config.yaml
+        curl -SL https://github.com/AliyunContainerService/image-syncer/releases/download/${IMAGE_SYNCER_VERSION}/image-syncer-${IMAGE_SYNCER_VERSION}-linux-amd64.tar.gz | tar -zxv
+
+    - name: image-sync
+      run: "./image-syncer --proc=20 --config=config.yaml --retries=5"
