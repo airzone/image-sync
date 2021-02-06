@@ -4,6 +4,8 @@ auth:
     password: QUAY_PASSWORD
 images:
   k8s.gcr.io/addon-resizer: quay.io/QUAY_NAMESPACE/addon-resizer
-  k8s.gcr.io/metrics-server/metrics-server: quay.io/QUAY_NAMESPACE/metrics-server
   k8s.gcr.io/dns/k8s-dns-node-cache: quay.io/QUAY_NAMESPACE/k8s-dns-node-cache
+  k8s.gcr.io/cpa/cluster-proportional-autoscaler-amd64: quay.io/QUAY_NAMESPACE/cluster-proportional-autoscaler-amd64
+  k8s.gcr.io/cpa/cluster-proportional-autoscaler-arm64: quay.io/QUAY_NAMESPACE/cluster-proportional-autoscaler-arm64
+  k8s.gcr.io/metrics-server/metrics-server: quay.io/QUAY_NAMESPACE/metrics-server
   k8s.gcr.io/ingress-nginx/controller: quay.io/QUAY_NAMESPACE/ingress-nginx-controller
