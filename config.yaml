@@ -10,3 +10,4 @@ images:
   k8s.gcr.io/metrics-server/metrics-server: quay.io/QUAY_NAMESPACE/metrics-server
   k8s.gcr.io/ingress-nginx/controller: quay.io/QUAY_NAMESPACE/ingress-nginx-controller
   k8s.gcr.io/ubuntu-nvidia-driver-installer: quay.io/QUAY_NAMESPACE/ubuntu-nvidia-driver-installer
+  k8s.gcr.io/nfd/node-feature-discovery: quay.io/QUAY_NAMESPACE/nfd/node-feature-discovery
